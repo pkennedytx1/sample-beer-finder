@@ -1,4 +1,9 @@
 #brewery-search-bar {
     max-width: 500px;
-    margin: 20px auto;
+    margin: 20px auto 0 auto;
+}
+
+.search-input {
+    max-width: 500px;
+    margin: 10px auto;
 }

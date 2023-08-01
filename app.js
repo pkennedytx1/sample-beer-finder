@@ -1,5 +1,6 @@
 const getBreweriesByCity = async () => {
     const searchQuery = document.getElementById("brewery-search-input").value;
+    if (!validateInput(searchQuery)) return false;
     const byCityURL = `https://api.openbrewerydb.org/v1/breweries?by_city=${searchQuery.toLowerCase()}`;
     const response = await fetch(byCityURL);
     const data = await response.json();
@@ -11,6 +12,29 @@ const getBreweriesByCity = async () => {
             website_url: brewery.website_url,
         })
     })
+}
+
+const input = document.getElementById("brewery-search-input");
+input.addEventListener('keyup', (event) => {
+    clearValidation();
+})
+
+const validateInput = (inputValue) => {
+    const error = clearValidation()
+    if (inputValue === "") {
+        error.innerHTML = 'please input a valid city'
+        input.classList.add('is-invalid');
+        return false;
+    }
+    return true;
+}
+
+const clearValidation = () => {
+    const input = document.getElementById("brewery-search-input");
+    input.classList.remove('is-invalid');
+    const error = document.getElementById("beer-input-error");
+    error.innerHTML = "";
+    return error;
 }
 
 const displayResults = (breweryData) => {
