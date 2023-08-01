@@ -21,9 +21,10 @@
     </nav>
     <div>
         <div class="search-input">
-            <div id="brewery-search-bar" class="input-group mb-3">
+            <div id="brewery-search-bar" class="input-group has-validation">
                 <input value="Austin" id="brewery-search-input" type="text" class="form-control" placeholder="Brewery City" aria-label="Recipient's username" aria-describedby="button-addon2">
                 <button onclick="getBreweriesByCity();" class="btn btn-outline-secondary" type="button" id="button-addon2">Search</button>
+                <div id="beer-input-error" class="error invalid-feedback"></div>
             </div>
         </div>
         <div id="brewery-results" class="row"></div>
