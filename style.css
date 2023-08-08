@@ -7,3 +7,33 @@
     max-width: 500px;
     margin: 10px auto;
 }
+
+#map {
+    height: 400px;
+ }
+
+ html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+ }
+
+ .pagination {
+    justify-content: center;
+ }
+
+ /* .howdy {
+    font-size: 400px;
+ }
+
+#hey {
+    color: green;
+}
+
+.howdy {
+    color: red;
+}
+    
+div {
+    color: pink;
+} */
